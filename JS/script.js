@@ -1,4 +1,4 @@
-document.addEventListener("Load", function() {
+/*document.addEventListener("Load", function() {
 
 set
 const hamburger = document.querySelector(".hamburger");
@@ -25,9 +25,11 @@ if (hamburger && navMenu) {
 
 
 });
+*/
 
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".common-bar .top-bar .nav-menu");
 
-/*
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
@@ -38,4 +40,3 @@ document.querySelectorAll(".nav-link").forEach(
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
 }))
-*/

@@ -5,16 +5,24 @@
 }
 
 body {
-    background-color: #f0f0f0; /* Light pastel grey color */
+    margin-top: 100px;
+    background-color: #bab7b7; /* Light pastel grey color */
     font-family: Arial, sans-serif; /* Optional: set a default font */
 }
 
 header {
-    position: relative;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white; /* Background color for the header */
+    color: #fff; /* Text color for contrast */
+    z-index: 1000; /* Ensures the header is on top of other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow effect */
 }
 
 li {
@@ -31,6 +39,24 @@ a {
     max-width: 100%;
     height: auto;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    width: 40%; /* Image container takes up 40% of the parent width */
+    padding: 20px; /* Add padding around the image */
+  }
+
+.image-container img {
+  width: 100%; /* Image takes up 100% of the container's width */
+  height: auto; /* Maintain aspect ratio */
+  border: 2px solid #ddd; /* Light border for a subtle effect */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+  
+
 
 .logo {
     width: auto;
