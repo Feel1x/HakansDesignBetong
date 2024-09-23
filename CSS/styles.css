@@ -34,29 +34,52 @@ a {
     text-decoration: none;
 }
 
-
-.responsive-image {
-    max-width: 100%;
-    height: auto;
+.top-container {
+    background-color: green;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-.image-container {
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
-    width: 40%; /* Image container takes up 40% of the parent width */
-    padding: 20px; /* Add padding around the image */
-  }
-
-.image-container img {
-  width: 100%; /* Image takes up 100% of the container's width */
-  height: auto; /* Maintain aspect ratio */
-  border: 2px solid #ddd; /* Light border for a subtle effect */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+.top-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
-  
 
+.gradient-overlay {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, black, rgb(48, 48, 48, 0.5));
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 1100px) {
+    .top-container {
+        height: auto;
+    }
+
+    .top-container img {
+        width: 125%;
+        transform: translate(-12.5%, 0%) 
+    }
+}
+
+/* Second image and info*/
+
+.middle-container {
+    background-color: gray;
+    height: 200vh;
+    width: 100%;
+}
+
+
+/* top bar stuff */
 
 .logo {
     width: auto;
@@ -135,3 +158,4 @@ a {
 .nav-menu.active {
     display: block;
 }
+
