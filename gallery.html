@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Website Title</title>
+        <link rel="stylesheet" href="CSS/styles.css">
+    </head>
+    <body>
+        <header class="common-bar">   
+            <nav class="top-bar">
+                <img src="Images/HDBLogo.jpeg" alt="CompanyLogo" class="logo"/>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Hem</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Om oss</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Gallery -->
+        <div class="gallery-container">
+            <div class="gallery-card">
+                <div class="card-text">
+                    <h3>Image Title</h3>
+                    <p>Short description of the image or project.</p>
+                </div>
+                <div class="card-image">
+                    <img src="Images/betonghemstr-1.jpeg" alt="Sample Image 1" class="active">
+                    <img src="Images/negative-edge-pools.jpg" alt="Sample Image 2">
+                    <img src="Images/pool.png" alt="Sample Image 3">
+                    <button class="prev-btn">&lt;</button>
+                    <button class="next-btn">&gt;</button>
+                </div>
+            </div>
+            <!-- Add more gallery-card divs as needed -->
+        </div>
+
+        <script src="JS/script.js"></script>
+    </body>
+</html>
