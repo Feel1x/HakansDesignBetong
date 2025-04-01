@@ -118,7 +118,7 @@ header.scrolled .nav-menu.active {
 
 .nav-link {
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 1.5em;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .nav-link:hover {
@@ -212,7 +212,7 @@ header.scrolled .nav-menu.active {
 }
 
 .hero-title {
-    font-size: 4.5em;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 500;
     margin-bottom: 40px;
     line-height: 1.2;
@@ -220,7 +220,7 @@ header.scrolled .nav-menu.active {
 }
 
 .hero-subtitle {
-    font-size: 1.2em;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     font-weight: 300;
     line-height: 1.6;
     margin-top: 20px;
@@ -299,12 +299,12 @@ header.scrolled .nav-menu.active {
 }
 
 .card-text h3 {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     margin-bottom: 10px;
 }
 
 .card-text p {
-    font-size: 1.1em;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
     max-width: 400px;
 }
 
@@ -422,6 +422,21 @@ header.scrolled .nav-menu.active {
 
     .image-container img {
         max-width: 100%;
+    }
+
+    .hero-content {
+        padding: 20px;
+        left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 15px;
+    }
+
+    .text-container {
+        text-align: center;
     }
 }
 
