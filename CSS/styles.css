@@ -618,107 +618,82 @@ header.scrolled .nav-menu.active {
     }
 }
 
-/* Gallery Styles */
-.gallery-container {
-    width: 100%;
-    padding: 20px;
+/* Footer Styles */
+.site-footer {
+    background-color: #a8a8a8;
+    padding: 60px 0 20px;
+    position: relative;
+    margin-top: 100px;
 }
 
-.gallery-card {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 95%;
-    display: flex;
+/* Subtle gradient separator */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.footer-content {
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
-.card-text {
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    z-index: 3;
+.footer-section h3 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
-.card-text h3 {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    margin-bottom: 10px;
+.footer-section p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
 }
 
-.card-text p {
-    font-size: clamp(1rem, 1.2vw, 1.1rem);
-    max-width: 400px;
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.card-image {
-    position: relative;
-    overflow: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 30px;
-    min-height: 70vh;
+.footer-bottom p {
+    color: #666;
+    font-size: 0.8rem;
 }
 
-.card-image img {
-    position: absolute;
-    width: 80%;
-    height: auto;
-    max-height: 65vh;
-    object-fit: contain;
-    transition: all 0.5s ease;
-    opacity: 0;
-    transform: scale(0.5) translateX(100%) translateY(30%);
+/* Update media queries for footer responsiveness */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .site-footer {
+        padding: 40px 0 20px;
+        margin-top: 60px;
+    }
 }
 
-.card-image img.prev {
-    transform: scale(0.4) translateX(-100%) translateY(50%);
-    opacity: 0.3;
-    z-index: 1;
-}
+@media (max-width: 480px) {
+    .footer-section h3 {
+        font-size: 1rem;
+    }
 
-.card-image img.active {
-    transform: scale(1) translateX(0) translateY(0);
-    opacity: 1;
-    z-index: 2;
-    position: relative;
-}
-
-.card-image img.next {
-    transform: scale(0.4) translateX(100%) translateY(50%);
-    opacity: 0.3;
-    z-index: 1;
-}
-
-.card-image img.exit {
-    transform: scale(0.4) translateX(-200%) translateY(50%);
-    opacity: 0;
-    z-index: 0;
-}
-
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    z-index: 3;
-    transition: background 0.3s ease;
-}
-
-.prev-btn:hover, .next-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
+    .footer-section p {
+        font-size: 0.85rem;
+    }
 }
 
 /* Media Queries */
@@ -890,83 +865,5 @@ header.scrolled .nav-menu.active {
     .gallery-card {
         display: flex;
         max-width: 1600px;
-    }
-}
-
-/* Footer Styles */
-.site-footer {
-    background-color: #a8a8a8;
-    padding: 60px 0 20px;
-    position: relative;
-    margin-top: 100px;
-}
-
-/* Subtle gradient separator */
-.site-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.footer-section h3 {
-    color: #333;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.footer-section p {
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.footer-bottom p {
-    color: #666;
-    font-size: 0.8rem;
-}
-
-/* Update media queries for footer responsiveness */
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .site-footer {
-        padding: 40px 0 20px;
-        margin-top: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-section h3 {
-        font-size: 1rem;
-    }
-
-    .footer-section p {
-        font-size: 0.85rem;
     }
 }

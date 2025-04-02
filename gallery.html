@@ -3,13 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Website Title</title>
+        <title>Galleri - Hakan's Design Betong</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="CSS/gallery.css">
     </head>
     <body>
-        <header class="common-bar">   
+        <header class="common-bar">
             <nav class="top-bar">
-                <img src="Images/HDBLogo.jpeg" alt="CompanyLogo" class="logo"/>
+                <a href="index.html" class="logo-link">
+                    <img src="Images/HDBLogoNoBackground.png" alt="Håkans Design Betong - Företagslogotyp" class="logo"/>
+                </a>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -17,32 +23,120 @@
                 </div>
                 
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Hem</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">Om oss</a></li>
                     <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Gallery -->
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <div class="card-text">
-                    <h3>Image Title</h3>
-                    <p>Short description of the image or project.</p>
+        <!-- Category Navigation -->
+        <nav class="category-nav">
+            <div class="category-container">
+                <button class="category-btn" data-category="pool">Pooler</button>
+                <button class="category-btn" data-category="uppfart">Uppfarter</button>
+                <button class="category-btn" data-category="trappa ">Trappor</button>
+                <button class="category-btn" data-category="gang">Gångar</button>
+                <button class="category-btn" data-category="monster">Mönster</button>
+                <button class="category-btn" data-category="kruka">Designobjekt</button>
+                <button class="category-btn" data-category="bank">Bänkar och Ställ</button>
+                <button class="category-btn" data-category="utomhusmobler">Utomhusmöbler</button>
+            </div>
+        </nav>
+
+        <!-- Gallery Sections -->
+        <main class="gallery-main">
+            <!-- Pooler Section -->
+            <section id="pool" class="gallery-section">
+                <h2 class="section-title">Pooler</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
                 </div>
-                <div class="card-image">
-                    <img src="Images/betonghemstr-1.jpeg" alt="Sample Image 1" class="active">
-                    <img src="Images/negative-edge-pools.jpg" alt="Sample Image 2">
-                    <img src="Images/pool.png" alt="Sample Image 3">
-                    <img src="Images/20-website-gallery-examples.jpg" alt="Sample Image 4">
-                    <button class="prev-btn">&lt;</button>
-                    <button class="next-btn">&gt;</button>
+            </section>
+
+            <!-- Uppfarter Section -->
+            <section id="uppfart" class="gallery-section">
+                <h2 class="section-title">Uppfarter</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Trappor Section -->
+            <section id="trappa" class="gallery-section">
+                <h2 class="section-title">Trappor</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Gångar Section -->
+            <section id="gang" class="gallery-section">
+                <h2 class="section-title">Gångar</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Mönster Section -->
+            <section id="monster" class="gallery-section">
+                <h2 class="section-title">Mönster</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+            </section>
+
+            <section id="kruka" class="gallery-section">
+                <h2 class="section-title">Designobjekt</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+            </section>
+
+            <section id="bank" class="gallery-section">
+                <h2 class="section-title">Bänkar och Ställ</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+            </section>
+
+            <section id="utomhusmobler" class="gallery-section">
+                <h2 class="section-title">Utomhusmöbler</h2>
+                <div class="masonry-grid">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTop" class="scroll-top-btn" aria-label="Scroll to top">
+            <span class="arrow">↑</span>
+        </button>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>Telefon: +46 70-123 45 67</p>
+                    <p>Email: info@hakansdesignbetong.se</p>
+                    <p>Adress: Storgatan 1, 123 45 Stockholm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Öppettider</h3>
+                    <p>Måndag - Fredag: 08:00 - 17:00</p>
+                    <p>Lördag - Söndag: Stängt</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Följ oss</h3>
+                    <p>Facebook</p>
+                    <p>Instagram</p>
+                    <p>LinkedIn</p>
                 </div>
             </div>
-            <!-- Add more gallery-card divs as needed -->
-        </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hakan's Design Betong. Alla rättigheter förbehållna.</p>
+            </div>
+        </footer>
 
         <script src="JS/script.js"></script>
         <script src="JS/gallery.js"></script>
