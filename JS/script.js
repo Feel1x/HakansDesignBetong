@@ -68,15 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const section = entry.target;
                 const imageContainer = section.querySelector('.middle-image');
                 const text = section.querySelector('.middle-text');
-                const decorativeLines = section.querySelectorAll('.decorative-line');
                 
                 imageContainer.classList.add('visible');
                 imageContainer.querySelector('img').classList.add('visible');
                 text.classList.add('visible');
-                decorativeLines.forEach(line => {
-                    line.classList.add('visible');
-                    console.log('Adding visible class to line:', line); // Debug log
-                });
             }
         });
     }, {
@@ -86,5 +81,35 @@ document.addEventListener('DOMContentLoaded', () => {
     middleSections.forEach(section => {
         middleObserver.observe(section);
     });
+
+    // About page hero image zoom effect
+    const aboutHeroImage = document.querySelector('.about-hero-image');
+    if (aboutHeroImage) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const maxScroll = window.innerHeight;
+            const zoomFactor = 1 + (scrolled / maxScroll) * 0.2; // Max zoom of 1.2x
+            aboutHeroImage.querySelector('img').style.transform = `scale(${zoomFactor})`;
+        });
+    }
+
+    // About page animations
+    const aboutText = document.querySelector('.about-text');
+    const aboutContact = document.querySelector('.about-contact');
+
+    if (aboutText && aboutContact) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        observer.observe(aboutText);
+        observer.observe(aboutContact);
+    }
 });
 

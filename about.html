@@ -3,13 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Website Title</title>
+        <title>Om oss - Håkans Design Betong</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="CSS/about.css">
     </head>
     <body>
-        <header class="common-bar">   
+        <header class="common-bar">
             <nav class="top-bar">
-                <img src="Images/HDBLogo.jpeg" alt="CompanyLogo" class="logo"/>
+                <a href="index.html" class="logo-link">
+                    <img src="Images/HDBLogoNoBackground.png" alt="Håkans Design Betong - Företagslogotyp" class="logo"/>
+                </a>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -17,24 +23,80 @@
                 </div>
                 
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Hem</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">Om oss</a></li>
                     <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- About -->
-        <div>
-            Håkans DesignBetong är ditt svar på allt inom betong, från robusta husgrunder till snygga garageplattor. Vi förvandlar vanliga ytor till konstverk genom att lägga mönsterbetong på garageuppfarter, gångar och uteplatser. Med vår expertis kan vi även skapa exklusiva poolområden genom att lägga betong runt din pool.
+        <main class="about-page">
+            <section class="about-hero">
+                <div class="about-hero-image">
+                    <img src="Images/OmOss.jpg" alt="Håkans Design Betong - Om oss" />
+                </div>
+                <div class="about-hero-content">
+                    <h1>Om oss</h1>
+                </div>
+            </section>
 
-För att göra din trädgård både vacker och underhållsfri tillverkar vi färgade och mönstrade kantstenar för att rama in rabatter, träd och buskar. Vi är också specialiserade på trapp- och balkongrenoveringar samt nytillverkning, vilket är ett utmärkt sätt att förnya din entré.
+            <section class="about-content">
+                <div class="about-text-container">
+                    <div class="about-text">
+                        <h2>Vår Historia</h2>
+                        <p>Med över 30 års erfarenhet inom betongbranschen har vi utvecklat en unik expertis inom designad betong. Vår resa började med en vision om att förvandla betong från ett funktionellt material till ett konstnärligt uttryck.</p>
+                        
+                        <h2>Vår Filosofi</h2>
+                        <p>Vi tror på att varje projekt är en möjlighet att skapa något unikt och bestående. Vår filosofi bygger på att kombinera traditionellt hantverk med moderna innovationer för att skapa lösningar som är både estetiskt tilltalande och funktionella.</p>
+                        
+                        <h2>Vår Expertis</h2>
+                        <p>Från skräddarsydda betongfasader till konstnärliga inredningsdetaljer, vi erbjuder en omfattande portfölj av betonglösningar. Vår expertis sträcker sig över:</p>
+                        <ul>
+                            <li>Designad betong för fasader</li>
+                            <li>Skräddarsydda betonglösningar</li>
+                            <li>Poolområden och uteplatser</li>
+                            <li>Kantstenar och trädgårdsdetaljer</li>
+                            <li>Trapp- och balkongrenoveringar</li>
+                        </ul>
+                    </div>
+                    <div class="about-contact">
+                        <h2>Kontakta Oss</h2>
+                        <p>Vill du veta mer om våra tjänster eller har du ett projekt i åtanke? Tveka inte att kontakta oss!</p>
+                        <p>Telefon: 070-XXX XX XX</p>
+                        <p>E-post: info@hakansdesignbetong.se</p>
+                        <p>Adress: [Din adress här]</p>
+                        <p>Arbetstider: Måndag - Fredag 08:00 - 17:00</p>
+                        <div class="contact-image">
+                            <img src="Images/FörstaSida/StenväggSmal.jpg" alt="Stenvägg - Håkans Design Betong" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-Med 30 års erfarenhet inom branschen och ett starkt fokus på kvalitet kan du lita på oss för att leverera resultat som håller högsta standard.
-        </div>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>Telefon: 070-XXX XX XX</p>
+                    <p>E-post: info@hakansdesignbetong.se</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Våra Tjänster</h3>
+                    <p>Designad Betong</p>
+                    <p>Skräddarsydda Betonglösningar</p>
+                    <p>Fasadbetong</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Följ oss</h3>
+                    <p>Instagram: @hakansdesignbetong</p>
+                    <p>Facebook: Håkans Design Betong</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Håkans Design Betong. Alla rättigheter förbehållna.</p>
+            </div>
+        </footer>
 
-        <!-- script src="JS/header.js"></script -->
         <script src="JS/script.js"></script>
     </body>
 </html>
