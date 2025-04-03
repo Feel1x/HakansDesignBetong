@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeGallery();
     // Initialize scroll to top button
     initializeScrollToTop();
+    // Initialize category dropdown
+    initializeCategoryDropdown();
 });
 
 // Gallery initialization
@@ -92,6 +94,10 @@ function createGalleryItem(imagePath, altText) {
     const item = document.createElement('div');
     item.className = 'gallery-item';
     
+    // Extract the image name from the path
+    const imageName = imagePath.split('/').pop().split('.')[0];
+    item.setAttribute('data-image', imageName);
+    
     const img = document.createElement('img');
     img.src = imagePath;
     img.alt = altText;
@@ -121,4 +127,80 @@ function initializeScrollToTop() {
             behavior: 'smooth'
         });
     });
+}
+
+// Initialize category dropdown
+function initializeCategoryDropdown() {
+    const dropdownBtn = document.querySelector('.category-dropdown-btn');
+    const dropdown = document.querySelector('.category-dropdown');
+    
+    if (dropdownBtn && dropdown) {
+        // Set initial text
+        dropdownBtn.textContent = 'Kategorier ▼';
+        
+        // Toggle dropdown on button click
+        dropdownBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+        
+        // Update dropdown button text when a category is selected
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Update button text
+                dropdownBtn.textContent = btn.textContent + ' ▼';
+                dropdown.classList.remove('active');
+                
+                // Trigger the category selection
+                const selectedCategory = btn.dataset.category;
+                if (selectedCategory) {
+                    const targetSection = document.getElementById(selectedCategory);
+                    if (targetSection) {
+                        const headerOffset = 150;
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // If screen is wide enough, close dropdown
+            if (window.innerWidth > 1200) {
+                dropdown.classList.remove('active');
+            }
+        });
+        
+        // Fix for touch devices
+        dropdownBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        });
+        
+        // Prevent default behavior for touch events on dropdown content
+        const dropdownContent = document.querySelector('.category-dropdown-content');
+        if (dropdownContent) {
+            dropdownContent.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+            });
+        }
+    }
 }
