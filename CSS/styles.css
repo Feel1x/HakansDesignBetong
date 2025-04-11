@@ -65,11 +65,12 @@ header.nav-menu-active .bar {
     height: 100px;
     background-color: transparent;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 24px;
     transition: all 0.3s ease;
 }
+
 
 .logo {
     width: auto;
@@ -189,8 +190,12 @@ header.scrolled .nav-menu.active {
 .hamburger {
     position: absolute;
     left: 20px;
-    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
 }
+
+
 
 .bar {
     display: block;
@@ -213,7 +218,7 @@ header.scrolled .nav-menu.active {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Hero & Gradient Sections */
+/* Hero Sections & Gradients */
 .top-container,
 .dual-gradient-container {
     width: 100%;
@@ -253,6 +258,7 @@ header.scrolled .nav-menu.active {
     pointer-events: none;
 }
 
+/* Hero Content & Typography */
 .hero-content {
     position: absolute;
     top: 35%;
@@ -263,10 +269,11 @@ header.scrolled .nav-menu.active {
     color: white;
     max-width: 600px;
     padding: 40px;
-    background: rgba(0, 0, 0, 0.08);
-    backdrop-filter: blur(5px);
+    /*background: rgba(0, 0, 0, 0.08);
+    /*backdrop-filter: blur(5px);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
@@ -284,8 +291,56 @@ header.scrolled .nav-menu.active {
     margin-top: 20px;
 }
 
-/*More button*/
+/* Service Text Block - Hero Section */
+.dual-gradient-container {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.service-text-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 3;
+    width: 90%;
+    max-width: 800px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.service-text-block h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 300;
+}
+
+.service-list span {
+    white-space: nowrap;
+}
+
+.service-list .bullet {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* More Button Styles */
 .more-button {
     position: relative;
     display: inline-block;
@@ -366,7 +421,7 @@ header.scrolled .nav-menu.active {
     }
 }
 
-/* Content Section */
+/* Content Section Styles */
 .content-section {
     display: flex;
     justify-content: space-between;
@@ -479,7 +534,7 @@ header.scrolled .nav-menu.active {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Middle Container */
+/* Middle Container & Sections */
 .middle-container {
     background: linear-gradient(to bottom, white, #bab7b7);
     width: 100%;
@@ -583,7 +638,7 @@ header.scrolled .nav-menu.active {
     color: #666;
 }
 
-/* Decorative lines for middle sections */
+/* Decorative elements */
 .middle-section::after {
     content: '';
     position: absolute;
@@ -849,6 +904,15 @@ header.scrolled .nav-menu.active {
     .decorative-line.black {
         bottom: -35px;
     }
+
+    /* Service Text Block Responsive Styles */
+    .service-list {
+        gap: 1rem;
+    }
+    
+    .service-text-block {
+        width: 95%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -858,6 +922,16 @@ header.scrolled .nav-menu.active {
 
     .text-container {
         text-align: center;
+    }
+
+    /* Service Text Block Mobile Styles */
+    .service-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .service-list .bullet {
+        display: none;
     }
 }
 

@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.nav-menu');
     const header = document.querySelector('header');
     const contentSection = document.querySelector('.content-section');
+    // Tvinga header att uppdatera direkt vid sidladdning    teeeeeeeeest
+    window.dispatchEvent(new Event('scroll'));
+
 
     // Toggle menu
     hamburger.addEventListener('click', () => {
