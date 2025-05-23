@@ -267,21 +267,36 @@ header.scrolled .nav-menu.active {
     text-align: left;
     z-index: 3;
     color: white;
-    max-width: 600px;
+    max-width: 900px;
     padding: 40px;
     /*background: rgba(0, 0, 0, 0.08);
     /*backdrop-filter: blur(5px);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);*/
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
     font-weight: 500;
     margin-bottom: 40px;
     line-height: 1.2;
     letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-title .title-line {
+    display: block;
+    white-space: nowrap;
+}
+
+.hero-title .larger-letter {
+    font-size: 1.5em;
+    position: relative;
+    display: inline;
+    line-height: 1;
 }
 
 .hero-subtitle {
@@ -302,7 +317,7 @@ header.scrolled .nav-menu.active {
 
 .service-text-block {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -322,16 +337,18 @@ header.scrolled .nav-menu.active {
 
 .service-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    font-weight: 300;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .service-list span {
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .service-list .bullet {
