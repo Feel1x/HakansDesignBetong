@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeScrollToTop();
     // Initialize category dropdown
     initializeCategoryDropdown();
+    // Initialize category nav scroll behavior
+    initializeCategoryNavScroll();
 });
 
 // Gallery initialization
@@ -15,7 +17,7 @@ function initializeGallery() {
         { id: 'gang', filePrefix: 'Gang', displayName: 'Gångar', imageCount: 4 },
         { id: 'kruka', filePrefix: 'Kruka', displayName: 'Designobjekt', imageCount: 3 },
         { id: 'monster', filePrefix: 'Monster', displayName: 'Mönster', imageCount: 3 },
-        { id: 'pool', filePrefix: 'Pool', displayName: 'Pooler', imageCount: 1 },
+        { id: 'pool', filePrefix: 'Pool', displayName: 'Pooler', imageCount: 2 },
         { id: 'trappa', filePrefix: 'Trappa', displayName: 'Trappor', imageCount: 7 },
         { id: 'uppfart', filePrefix: 'Uppfart', displayName: 'Uppfarter', imageCount: 4 },
         { id: 'utomhusmobler', filePrefix: 'UtomhusMobler', displayName: 'Utomhusmöbler', imageCount: 1 }
@@ -143,12 +145,18 @@ function initializeCategoryDropdown() {
             e.preventDefault();
             e.stopPropagation();
             dropdown.classList.toggle('active');
+            if (dropdown.classList.contains('active')) {
+                dropdownBtn.textContent = 'Kategorier ▲';
+            } else {
+                dropdownBtn.textContent = 'Kategorier ▼';
+            }
         });
         
         // Close dropdown when clicking outside
         document.addEventListener('click', (event) => {
             if (!dropdown.contains(event.target)) {
                 dropdown.classList.remove('active');
+                dropdownBtn.textContent = 'Kategorier ▼';
             }
         });
         
@@ -203,4 +211,44 @@ function initializeCategoryDropdown() {
             });
         }
     }
+}
+
+// Category Navigation Scroll Behavior
+function initializeCategoryNavScroll() {
+    const categoryNav = document.querySelector('.category-nav');
+    let lastScrollTop = 0;
+    let scrollThreshold = 100; // Minimum scroll distance before hiding/showing
+    let isHidden = false;
+
+    window.addEventListener('scroll', function() {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollDifference = Math.abs(currentScrollTop - lastScrollTop);
+        const dropdown = document.querySelector('.category-dropdown');
+
+        // Only trigger if scroll difference is significant enough
+        if (scrollDifference > scrollThreshold) {
+            if (currentScrollTop > lastScrollTop && currentScrollTop > 200) {
+                // Scrolling down and not at the very top
+                if (!isHidden && !dropdown.classList.contains('active')) {
+                    categoryNav.classList.add('hidden');
+                    isHidden = true;
+                }
+            } else if (currentScrollTop < lastScrollTop) {
+                // Scrolling up
+                if (isHidden) {
+                    categoryNav.classList.remove('hidden');
+                    isHidden = false;
+                }
+            }
+            lastScrollTop = currentScrollTop;
+        }
+
+        // Always show when at the top
+        if (currentScrollTop <= 200) {
+            if (isHidden) {
+                categoryNav.classList.remove('hidden');
+                isHidden = false;
+            }
+        }
+    });
 }

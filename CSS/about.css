@@ -1,5 +1,6 @@
 /* About Page Styles */
 .about-page {
+    margin-top: 90px;
     position: relative;
     width: 100%;
     overflow-x: hidden;
