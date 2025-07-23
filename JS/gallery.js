@@ -85,7 +85,7 @@ function loadCategoryImages(category) {
     
     // Example image loading (replace with actual image paths)
     for (let i = 1; i <= imageCount; i++) {
-        const imagePath = `Images/Galleri/${filePrefix}${i}.jpg`;
+        const imagePath = `images/galleri/${filePrefix}${i}.jpg`;
         const galleryItem = createGalleryItem(imagePath, `${category} ${i}`);
         masonryGrid.appendChild(galleryItem);
     }
